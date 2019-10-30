@@ -4,7 +4,7 @@ This is a Contacts app based on Model–View–Viewmodel (MVVM), Dagger, Corouti
 
 ## Screenshots and Gif
 
-![contact plus ](https://user-images.githubusercontent.com/22679998/67904464-1f84fd00-fb77-11e9-8ce8-5934d3f9ce23.gif)
+![ezgif com-resize](https://user-images.githubusercontent.com/22679998/67904860-59a2ce80-fb78-11e9-91d0-d0f0800838a9.gif)
 
 ## Specs
 
