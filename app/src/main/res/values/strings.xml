@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Contacts Plus</string>
+    <string name="shr_hint_surname">Surname</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_company">Company</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_address">Address</string>
+    <string name="edit_contact">Edit contact</string>
+    <string name="search_contacts">Search contacts</string>
+</resources>

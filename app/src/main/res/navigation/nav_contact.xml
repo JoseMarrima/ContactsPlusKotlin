@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_contact"
+        app:startDestination="@id/contactsFragment">
+
+    <fragment
+            android:id="@+id/contactsFragment"
+            android:name="com.josemarrima.contactsplus.ui.contacts.ContactsFragment"
+            android:label="ContactsFragment" >
+        <action
+                android:id="@+id/action_contactsFragment_to_contactDetailsFragment"
+                app:destination="@id/contactDetailsFragment" />
+        <action
+                android:id="@+id/action_contactsFragment_to_addContactFragment"
+                app:destination="@id/addContactFragment" >
+            <argument android:defaultValue="-1"
+                android:name="id" />
+        </action>
+    </fragment>
+    <fragment
+            android:id="@+id/addContactFragment"
+            android:name="com.josemarrima.contactsplus.ui.addContact.AddContactFragment"
+            android:label="add_contact_fragment"
+            tools:layout="@layout/add_contact_fragment" >
+        <action
+                android:id="@+id/action_addContactFragment_to_contactsFragment"
+                app:destination="@id/contactsFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+            android:id="@+id/contactDetailsFragment"
+            android:name="com.josemarrima.contactsplus.ui.contactDetails.ContactDetailsFragment"
+            android:label="contact_details_fragment"
+            tools:layout="@layout/contact_details_fragment" >
+        <action
+                android:id="@+id/action_contactDetailsFragment_to_contactsFragment"
+                app:destination="@id/contactsFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_contactDetailsFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+    </fragment>
+</navigation>
