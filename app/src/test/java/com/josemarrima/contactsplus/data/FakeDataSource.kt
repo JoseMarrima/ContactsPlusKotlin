@@ -3,7 +3,7 @@ package com.josemarrima.contactsplus.data
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-class FakeDataSource(var  contacts: MutableList<Contact>? = mutableListOf()) : ContactsDataSource {
+class FakeDataSource(var contacts: MutableList<Contact>? = mutableListOf()) : ContactsDataSource {
 
     private val observableContacts = MutableLiveData<List<Contact>>()
 
@@ -25,7 +25,7 @@ class FakeDataSource(var  contacts: MutableList<Contact>? = mutableListOf()) : C
     }
 
     override suspend fun deleteContact(contact: Contact) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        contacts?.removeIf { it == contact }
     }
 
     override fun findByName(query: String): LiveData<List<Contact>> {
