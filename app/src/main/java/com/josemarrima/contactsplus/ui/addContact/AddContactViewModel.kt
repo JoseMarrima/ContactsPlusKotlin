@@ -3,11 +3,11 @@ package com.josemarrima.contactsplus.ui.addContact
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.viewModelScope
 import com.josemarrima.contactsplus.data.Contact
-import com.josemarrima.contactsplus.data.ContactRepository
+import com.josemarrima.contactsplus.data.DefaultContactRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class AddContactViewModel @Inject constructor(private val repository: ContactRepository) : ViewModel() {
+class AddContactViewModel @Inject constructor(private val repositoryDefault: DefaultContactRepository) : ViewModel() {
 
     var name = ""
 
@@ -27,7 +27,7 @@ class AddContactViewModel @Inject constructor(private val repository: ContactRep
 
     private fun insertContact(contact: Contact) {
         viewModelScope.launch {
-            repository.insertContact(contact)
+            repositoryDefault.insertContact(contact)
         }
     }
 
@@ -37,9 +37,9 @@ class AddContactViewModel @Inject constructor(private val repository: ContactRep
 
     private fun updateRepoContact(contact: Contact) {
         viewModelScope.launch {
-            repository.updateContact(contact)
+            repositoryDefault.updateContact(contact)
         }
     }
 
-    fun getContactById(id: Int) = repository.getContactById(id)
+    fun getContactById(id: Int) = repositoryDefault.getContactById(id)
 }
